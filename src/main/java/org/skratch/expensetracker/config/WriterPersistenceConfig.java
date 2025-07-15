@@ -68,7 +68,7 @@ public class WriterPersistenceConfig {
 
         LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
         factory.setDataSource(writerDataSource(writerUrl));
-        factory.setPackagesToScan("org.skratch.sensitivewords.model");
+        factory.setPackagesToScan("org.skratch.expensetracker.model");
         factory.setJpaProperties(additionalProperties(writerUrl));
         factory.setJpaVendorAdapter(vendorAdapter);
         factory.setPersistenceUnitName("writer-db");

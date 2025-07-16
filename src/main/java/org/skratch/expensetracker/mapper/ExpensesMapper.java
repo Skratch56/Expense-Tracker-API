@@ -6,9 +6,10 @@ import org.skratch.expensetracker.dto.ExpenseDTO;
 import org.skratch.expensetracker.model.Expense;
 
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
-public interface ExpenseMapper {
+public interface ExpensesMapper {
 
     Expense mapToExpense(ExpenseDTO expenseDTO);
+
     ExpenseDTO mapToExpenseDTO(Expense expense);
 
 }

@@ -1,10 +1,13 @@
 package org.skratch.expensetracker;
 
 import lombok.extern.slf4j.Slf4j;
+import org.skratch.expensetracker.mapper.ExpensesMapper;
 import org.springframework.boot.Banner;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.Bean;
 
 @Slf4j
 @SpringBootApplication
@@ -28,6 +31,11 @@ public class ExpenseTrackerApplication {
         if (context.isRunning()) {
             log.info("Application started with profile: {}", env);
         }
+    }
+
+    @Bean
+    public CommandLineRunner verifyMapper(ExpensesMapper mapper) {
+        return args -> System.out.println("✅ ExpenseMapper bean: " + mapper.getClass().getName());
     }
 
 }
